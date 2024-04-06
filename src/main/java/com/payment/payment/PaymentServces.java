@@ -24,7 +24,9 @@ public interface PaymentServces {
             System.err.println(e.getMessage());
         } 
         return payments;
-
    } 
 
+static void deleteExistingPayment(List<Payment> payments, Payment paymentToDelete) {
+    payments.removeIf(payment -> payment.getId().equals(paymentToDelete.getId()));
+}
 }

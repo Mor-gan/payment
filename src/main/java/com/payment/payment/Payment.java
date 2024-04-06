@@ -1,7 +1,6 @@
 package com.payment.payment;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.UUID;
 
 public class Payment {
@@ -22,7 +21,7 @@ public class Payment {
         this.balance = balance;
         this.cardHolderName = cardHolderName;
         this.cvv = cvv;
-            }
+    }
 
     public UUID getId() {
         return this.id;
