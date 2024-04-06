@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.io.File;
-import java.util.UUID;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,12 +22,9 @@ public interface PaymentServces {
             payments.forEach(System.out::println);
         } catch (IOException e) {
             System.err.println(e.getMessage());
-        } return payments;
+        } 
+        return payments;
+
    } 
 
-
-   static boolean cancelPayment(UUID id) {
-      return true;
-
-   }
 }
