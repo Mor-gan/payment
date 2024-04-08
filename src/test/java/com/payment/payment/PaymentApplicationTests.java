@@ -20,5 +20,4 @@ class PaymentApplicationTests {
 		assertNotNull(payments);
 		assertFalse(payments.isEmpty());
 	}
-	
 }

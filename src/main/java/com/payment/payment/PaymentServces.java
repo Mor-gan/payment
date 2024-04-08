@@ -14,7 +14,7 @@ public interface PaymentServces {
 
     String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-     static List<Payment> getAllPayments(String filePath) {
+    static List<Payment> getAllPayments(String filePath) {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
@@ -23,11 +23,21 @@ public interface PaymentServces {
             payments.forEach(System.out::println);
         } catch (IOException e) {
             System.err.println(e.getMessage());
-        } 
+        }
         return payments;
-   } 
+    }
 
-static void deleteExistingPayment(List<Payment> payments, Payment paymentToDelete) {
-    payments.removeIf(payment -> payment.getId().equals(paymentToDelete.getId()));
-}
+
+    public static void save(Payment payments, String outputFile) {
+
+        try {
+            File outputFileObj = Paths.get(outputFile).toFile();
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(outputFileObj, payments);
+            System.out.println("Employee saved successfully to " + outputFile);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
 }
