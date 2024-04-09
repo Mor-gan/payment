@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 import java.io.File;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +13,7 @@ public interface PaymentServces {
 
     String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-    static List<Payment> getAllPayments(String filePath) {
+    static List<Payment> getAllPayments(String filepath2) {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
@@ -26,7 +25,6 @@ public interface PaymentServces {
         }
         return payments;
     }
-
 
     public static void save(Payment payments, String outputFile) {
 
