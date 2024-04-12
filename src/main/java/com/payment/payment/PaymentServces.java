@@ -13,7 +13,7 @@ public interface PaymentServces {
 
     String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-    static List<Payment> getAllPayments(String filepath2) {
+    static List<Payment> getAllPayments(String filepath) {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
@@ -26,15 +26,18 @@ public interface PaymentServces {
         return payments;
     }
 
-    public static void save(Payment payments, String outputFile) {
-
+    public static void savePayment(Payment payment, String filePath) {
         try {
-            File outputFileObj = Paths.get(outputFile).toFile();
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(outputFileObj, payments);
-            System.out.println("Employee saved successfully to " + outputFile);
+            File outputFileObj = Paths.get(filePath).toFile();
+            if (!outputFileObj.exists()) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                objectMapper.writeValue(outputFileObj, payment);
+                System.out.println("Payment saved successfully to " + filePath);
+            } else {
+                System.out.println("File already exists: " + filePath);
+            }
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            System.err.println("Error saving payment: " + e.getMessage());
         }
     }
 
