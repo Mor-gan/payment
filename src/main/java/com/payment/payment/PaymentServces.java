@@ -11,9 +11,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public interface PaymentServces {
 
-    String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
+    static String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-    static List<Payment> getAllPayments(String filepath) {
+    public static List<Payment> getAllPayments(String filepath) {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
