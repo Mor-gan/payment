@@ -9,7 +9,7 @@ import java.io.File;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public interface PaymentServces {
+public class PaymentServces {
 
     static String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
