@@ -19,7 +19,7 @@ public class CardPayment extends PaymentServces {
         return payments;
     }
 
-    protected Payment processPayment(Payment createPayment) throws InsufficientBalanceException {
+    public Payment processPayment(Payment createPayment) throws InsufficientBalanceException {
         BigDecimal paymentAmount = createPayment.getAmount();
         BigDecimal cardBalance = createPayment.getBalance();
         if (cardBalance.compareTo(paymentAmount) >= 0) {

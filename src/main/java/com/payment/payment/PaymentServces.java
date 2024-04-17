@@ -13,7 +13,7 @@ public class PaymentServces {
 
     static String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-    public static List<Payment> getAllPayments(String filepath) {
+    public static List<Payment> getAllPayments(String filePath) {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
