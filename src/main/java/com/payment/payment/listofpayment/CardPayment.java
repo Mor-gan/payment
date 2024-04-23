@@ -15,9 +15,6 @@ public class CardPayment extends PaymentServces {
 
     private List<Payment> payments = new ArrayList<>();
      
-    public List<Payment> getAllPayments() {
-        return payments;
-    }
 
     public Payment processPayment(Payment createPayment) throws InsufficientBalanceException {
         BigDecimal paymentAmount = createPayment.getAmount();

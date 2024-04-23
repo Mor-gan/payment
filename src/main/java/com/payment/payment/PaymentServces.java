@@ -13,7 +13,7 @@ public class PaymentServces {
 
     static String filePath = "/Users/bimbo/Documents/payment/src/main/resources/paymentdetails.json";
 
-    public static List<Payment> getAllPayments(String filePath) {
+    public static List<Payment> getAllPayments() {
         List<Payment> payments = new ArrayList<>();
         try {
             File sourceFile = Paths.get(filePath).toFile();
@@ -39,6 +39,11 @@ public class PaymentServces {
         } catch (IOException e) {
             System.err.println("Error saving payment: " + e.getMessage());
         }
+    }
+
+    public static List<Payment> getAllPayxments() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllPayxments'");
     }
 
 }

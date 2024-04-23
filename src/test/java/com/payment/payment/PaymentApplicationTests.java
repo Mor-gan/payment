@@ -18,12 +18,12 @@ import com.payment.payment.listofpayment.CardPayment;
 @SpringBootTest
 class PaymentApplicationTests {
 
-	// @Test
-	// public void testGetAllPayments() {
-	// 	List<Payment> payments = PaymentServces.getAllPayments();
-	// 	assertNotNull(payments);
-	// 	assertFalse(payments.isEmpty());
-	// }
+	@Test
+	public void testGetAllPayments() {
+		List<Payment> payments = PaymentServces.getAllPayments();
+		assertNotNull(payments);
+		assertFalse(payments.isEmpty());
+	}
 }
 	//   @Test
     // void testProcessPaymentWithSufficientBalance() {

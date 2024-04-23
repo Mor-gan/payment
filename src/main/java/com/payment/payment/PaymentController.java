@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
     @GetMapping()
     public ResponseEntity<List<Payment>> getAllPayments() {
-        List<Payment> payments = PaymentServces.getAllPayments(PaymentServces.filePath);
+        List<Payment> payments = PaymentServces.getAllPayments();
         return new ResponseEntity<>(payments, HttpStatus.OK);
     }
 }
