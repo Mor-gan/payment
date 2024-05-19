@@ -12,9 +12,6 @@ public class Payment {
     private String cardHolderName;
     private String cvv;
 
-    public Payment(BigDecimal valueOf, BigDecimal initialBalance, Object object, Object object2, String string) {
-        //TODO Auto-generated constructor stub
-    }
 
     public void PaymentDetails(BigDecimal amount, BigDecimal balance, String cardNumber, String cardHolderName,
             String cvv) {
