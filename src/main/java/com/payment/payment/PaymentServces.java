@@ -26,19 +26,19 @@ public class PaymentServces {
         return payments;
     }
 
-    public static void savePayment(Payment payment, String outputFile) {
-        try {
-            File outputFileObj = Paths.get(outputFile).toFile();
-            if (!outputFileObj.exists()) { // Check if the file already exists
-                ObjectMapper objectMapper = new ObjectMapper();
-                objectMapper.writeValue(outputFileObj, payment);
-                System.out.println("Payment saved successfully to " + outputFile);
-            } else {
-                System.out.println("File already exists: " + outputFile);
-            }
-        } catch (IOException e) {
-            System.err.println("Error saving payment: " + e.getMessage());
-        }
-    }
+    // public static void savePayment(Payment payment, String outputFile) {
+    //     try {
+    //         File outputFileObj = Paths.get(outputFile).toFile();
+    //         if (!outputFileObj.exists()) { // Check if the file already exists
+    //             ObjectMapper objectMapper = new ObjectMapper();
+    //             objectMapper.writeValue(outputFileObj, payment);
+    //             System.out.println("Payment saved successfully to " + outputFile);
+    //         } else {
+    //             System.out.println("File already exists: " + outputFile);
+    //         }
+    //     } catch (IOException e) {
+    //         System.err.println("Error saving payment: " + e.getMessage());
+    //     }
+    // }
 
 }
